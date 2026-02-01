@@ -82,7 +82,7 @@ if (NOT GEODE_BINDINGS_REPO_PATH)
 		"cloned the repository (system environment variables are supported)."
 	)
 	CPMAddPackage(NAME "bindings"
-		GITHUB_REPOSITORY "geode-sdk/bindings"
+		GITHUB_REPOSITORY "aloaf812/bindings"
 		GIT_TAG "main"
 		DOWNLOAD_ONLY YES
 		NO_CACHE YES
@@ -205,8 +205,8 @@ include(cmake/GeodeFile.cmake)
 # end GEODE_GD_VERSION
 
 if (NOT DEFINED GEODE_GD_VERSION)
-	set(GEODE_GD_VERSION 1.920)
-	set(GEODE_COMP_GD_VERSION 19200)
+	set(GEODE_GD_VERSION 1.710)
+	set(GEODE_COMP_GD_VERSION 17100)
 endif()
 
 target_compile_definitions(
