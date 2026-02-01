@@ -258,6 +258,11 @@ jobs:
       uses: ./.github/actions/setup-dump-sym
       id: breakpad-tools
 
+    - name: Setup Android NDK r21e
+      uses: nttld/setup-ndk@v1
+      with:
+        ndk-version: r21e
+
     - name: Configure
       run: >
         ${{ env.base-configure-command }}
