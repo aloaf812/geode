@@ -1,7 +1,7 @@
 #include "EventWinnerAnimation.hpp"
 #include <Geode/binding/CCLightFlash.hpp>
 #include <Geode/binding/GameToolbox.hpp>
-#include <Geode/binding/FMODAudioEngine.hpp>
+// #include <Geode/binding/FMODAudioEngine.hpp>
 #include <Geode/binding/CCCircleWave.hpp>
 #include <Geode/binding/ButtonSprite.hpp>
 #include <Geode/binding/CCMenuItemSpriteExtra.hpp>
@@ -239,7 +239,7 @@ bool EventWinnerAnimation::init() {
         nullptr
     ));
 
-    FMODAudioEngine::sharedEngine()->playEffect("endStart_02.ogg");
+    // FMODAudioEngine::sharedEngine()->playEffect("endStart_02.ogg");
 #endif
 
     return true;

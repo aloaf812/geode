@@ -70,7 +70,6 @@ elseif (GEODE_TARGET_PLATFORM STREQUAL "MacOS")
 		"-framework Cocoa"
 		"-framework OpenGL"
 		"-framework SystemConfiguration"
-		${GEODE_LOADER_PATH}/include/link/macos/libfmod.dylib
 		${GEODE_LOADER_PATH}/include/link/macos/libssl.a
 		${GEODE_LOADER_PATH}/include/link/macos/libcrypto.a
 		${GEODE_LOADER_PATH}/include/link/macos/libnghttp2.a
@@ -107,7 +106,6 @@ elseif (GEODE_TARGET_PLATFORM STREQUAL "Win32")
 		${GEODE_LOADER_PATH}/include/link/win32/libExtensions.lib
 		${GEODE_LOADER_PATH}/include/link/win32/glew32.lib
 		${GEODE_LOADER_PATH}/include/link/win32/gdstring.lib
-		${GEODE_LOADER_PATH}/include/link/win32/fmod.lib
 		opengl32
 	)
 
@@ -148,7 +146,6 @@ elseif (GEODE_TARGET_PLATFORM STREQUAL "Android32")
 		${GEODE_LOADER_PATH}/include/link/android32/libngtcp2_crypto_boringssl.a
 		${GEODE_LOADER_PATH}/include/link/android32/libcurl.a
 		${GEODE_LOADER_PATH}/include/link/android32/libcocos2dcpp.so
-		${GEODE_LOADER_PATH}/include/link/android32/libfmod.so
 		GLESv2
 		log
 	)
