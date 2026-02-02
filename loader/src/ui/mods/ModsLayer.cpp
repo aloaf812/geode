@@ -883,7 +883,7 @@ void ModsLayer::onBack(CCObject*) {
     for (auto& list : m_lists) {
         list.second->setIsExiting(true);
     }
-    CCDirector::get()->replaceScene(CCTransitionFade::create(.5f, MenuLayer::scene(false)));
+    CCDirector::get()->replaceScene(CCTransitionFade::create(.5f, MenuLayer::scene()));
 
     // To avoid memory overloading, clear caches after leaving the layer
     server::clearServerCaches(true);
