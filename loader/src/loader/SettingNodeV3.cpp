@@ -85,7 +85,7 @@ bool SettingNodeV3::init(std::shared_ptr<SettingV3> setting, float width) {
         auto descSpr = CCSprite::createWithSpriteFrameName("GJ_infoIcon_001.png");
         descSpr->setScale(.5f);
         auto descBtn = CCMenuItemSpriteExtra::create(
-            descSpr, this, menu_selector(SettingNodeV3::onDescription)
+            descSpr, nullptr, this, menu_selector(SettingNodeV3::onDescription)
         );
         m_impl->nameMenu->addChild(descBtn);
     }
@@ -366,7 +366,7 @@ bool StringSettingNodeV3::init(std::shared_ptr<StringSettingV3> setting, float w
         m_arrowLeftSpr->setFlipX(true);
         m_arrowLeftSpr->setScale(.4f);
         auto arrowLeftBtn = CCMenuItemSpriteExtra::create(
-            m_arrowLeftSpr, this, menu_selector(StringSettingNodeV3::onArrow)
+            m_arrowLeftSpr, nullptr, this, menu_selector(StringSettingNodeV3::onArrow)
         );
         arrowLeftBtn->setTag(-1);
         this->getButtonMenu()->addChildAtPosition(arrowLeftBtn, Anchor::Left, ccp(5, 0));
@@ -374,7 +374,7 @@ bool StringSettingNodeV3::init(std::shared_ptr<StringSettingV3> setting, float w
         m_arrowRightSpr = CCSprite::createWithSpriteFrameName("navArrowBtn_001.png");
         m_arrowRightSpr->setScale(.4f);
         auto arrowRightBtn = CCMenuItemSpriteExtra::create(
-            m_arrowRightSpr, this, menu_selector(StringSettingNodeV3::onArrow)
+            m_arrowRightSpr, nullptr, this, menu_selector(StringSettingNodeV3::onArrow)
         );
         arrowRightBtn->setTag(1);
         this->getButtonMenu()->addChildAtPosition(arrowRightBtn, Anchor::Right, ccp(-5, 0));
@@ -448,7 +448,7 @@ bool FileSettingNodeV3::init(std::shared_ptr<FileSettingV3> setting, float width
     m_selectBtnSpr = CCSprite::createWithSpriteFrameName("GJ_plusBtn_001.png");
     m_selectBtnSpr->setScale(.7f);
     m_selectBtn = CCMenuItemSpriteExtra::create(
-        m_selectBtnSpr, this, menu_selector(FileSettingNodeV3::onPickFile)
+        m_selectBtnSpr, nullptr, this, menu_selector(FileSettingNodeV3::onPickFile)
     );
     this->getButtonMenu()->addChildAtPosition(m_selectBtn, Anchor::Right, ccp(-5, 0));
 
@@ -551,7 +551,7 @@ bool Color3BSettingNodeV3::init(std::shared_ptr<Color3BSettingV3> setting, float
     m_colorSprite->setScale(.65f);
 
     m_colorBtn = CCMenuItemSpriteExtra::create(
-        m_colorSprite, this, menu_selector(Color3BSettingNodeV3::onSelectColor)
+        m_colorSprite, nullptr, this, menu_selector(Color3BSettingNodeV3::onSelectColor)
     );
     this->getButtonMenu()->addChildAtPosition(m_colorBtn, Anchor::Right, ccp(-10, 0));
 
@@ -598,7 +598,7 @@ bool Color4BSettingNodeV3::init(std::shared_ptr<Color4BSettingV3> setting, float
     m_colorSprite->setScale(.65f);
 
     m_colorBtn = CCMenuItemSpriteExtra::create(
-        m_colorSprite, this, menu_selector(Color4BSettingNodeV3::onSelectColor)
+        m_colorSprite, nullptr, this, menu_selector(Color4BSettingNodeV3::onSelectColor)
     );
     this->getButtonMenu()->addChildAtPosition(m_colorBtn, Anchor::Right, ccp(-10, 0));
 
