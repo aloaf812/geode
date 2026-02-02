@@ -109,6 +109,7 @@ struct CustomMenuLayer : Modify<CustomMenuLayer, MenuLayer> {
             if (LoaderImpl::get()->userTriedToLoadDLLs()) {
                 Loader::get()->queueInMainThread([] {
                     auto popup = FLAlertLayer::create(
+                        nullptr,
                         "Hold up!",
                         "It appears that you have tried to <cr>load DLLs</c> with Geode. "
                         "Please note that <cy>Geode is incompatible with ALL DLLs</c>, "
@@ -116,7 +117,8 @@ struct CustomMenuLayer : Modify<CustomMenuLayer, MenuLayer> {
                         "<cr>crash</c>.\n\n"
                         "Remove the DLLs / other mod loaders you have, or <cr>proceed at "
                         "your own risk.</c>",
-                        "OK"
+                        "OK",
+                        nullptr
                     );
 
                     // popup->m_noElasticity = true;
