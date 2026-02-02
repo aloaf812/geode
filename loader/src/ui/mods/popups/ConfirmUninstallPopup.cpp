@@ -10,9 +10,10 @@ bool ConfirmUninstallPopup::setup(Mod* mod) {
     auto msg = fmt::format("Are you sure you want to \n<cr>uninstall</c> <cy>{}</c>?", mod->getName());
     auto text = TextArea::create(
         msg.c_str(),
-        "chatFont.fnt",
         1.f, m_size.width - 35,
-        ccp(.5f, .5f), 20.f
+        ccp(.5f, .5f), 
+        "chatFont.fnt",
+        20.f
     );
     m_mainLayer->addChildAtPosition(text, Anchor::Center, ccp(0, 20));
 
