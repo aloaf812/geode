@@ -46,8 +46,6 @@ $register_ids(LevelInfoLayer) {
 	if (m_featuredCoin)
 		m_featuredCoin->setID("featured-sprite");
 
-	setIDSafe<CustomSongWidget>(this, 0, "custom-songs-widget");
-
 	if (auto menu = this->getChildByType<CCMenu>(0)) {
 		menu->setID("play-menu");
 		setIDSafe(menu, 0, "play-button");
