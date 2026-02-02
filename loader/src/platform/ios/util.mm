@@ -308,9 +308,11 @@ void geode::utils::game::restart(bool save) {
             } else {
                 // this would only happen if you don't have the launcher
                 FLAlertLayer::create(
+                     nullptr,
                      "Unavailable",
                      "Restarting is currently <cr>unavailable</c>. Please <cy>restart the game</c> manually.",
-                     "OK"
+                     "OK",
+                     nullptr
                  )->show();
             }
         }

@@ -508,9 +508,11 @@ void FileSettingNodeV3::onPickFile(CCObject*) {
         }
         else {
             FLAlertLayer::create(
+                nullptr,
                 "Failed",
                 fmt::format("Failed to pick file: {}", value->unwrapErr()).c_str(),
-                "Ok"
+                "Ok",
+                nullptr
             )->show();
         }
     });

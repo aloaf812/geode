@@ -49,9 +49,11 @@ protected:
                 auto id = m_id;
                 this->onClose(nullptr);
                 FLAlertLayer::create(
+                    nullptr,
                     "Error Loading Mod",
                     fmt::format("Unable to find mod with the ID <cr>{}</c>!", id).c_str(),
-                    "OK"
+                    "OK",
+                    nullptr
                 )->show();
             }
         }

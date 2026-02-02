@@ -1210,12 +1210,14 @@ void Loader::Impl::installModManuallyFromBytes(std::span<const std::uint8_t> byt
     });
     if (!res) {
         FLAlertLayer::create(
+            nullptr,
             "Invalid File",
             fmt::format(
                 "The file is not a valid Geode mod: {}",
                 res.unwrapErr()
             ).c_str(),
-            "OK"
+            "OK",
+            nullptr
         )->show();
         return;
     }
@@ -1225,13 +1227,15 @@ void Loader::Impl::installModManuallyFromBytes(std::span<const std::uint8_t> byt
     auto check = meta.checkTargetVersions();
     if (!check) {
         FLAlertLayer::create(
+            nullptr,
             "Invalid Mod Version",
             fmt::format(
                 "The mod <cy>{}</c> can not be installed: {}",
                 meta.getID(),
                 check.unwrapErr()
             ).c_str(),
-            "OK"
+            "OK",
+            nullptr
         )->show();
 
         return;
@@ -1253,12 +1257,14 @@ void Loader::Impl::installModManuallyFromBytes(std::span<const std::uint8_t> byt
         // This is incredibly unlikely but theoretically possible
         if (counter >= MAX_ATTEMPTS) {
             FLAlertLayer::create(
+                nullptr,
                 "Unable to Install",
                 fmt::format(
                     "Unable to install mod <co>{}</c>: Can't find a free filename!",
                     meta.getID()
                 ).c_str(),
-                "OK"
+                "OK",
+                nullptr
             )->show();
             return;
         }
@@ -1267,12 +1273,14 @@ void Loader::Impl::installModManuallyFromBytes(std::span<const std::uint8_t> byt
         auto writeRes = file::writeBinary(installTo, byteVec);
         if (!writeRes) {
             FLAlertLayer::create(
+                nullptr,
                 "Unable to Install",
                 fmt::format(
                     "Unable to install mod <co>{}</c>: {}",
                     meta.getID(), writeRes.unwrapErr()
                 ).c_str(),
-                "OK"
+                "OK",
+                nullptr
             )->show();
             return;
         }
@@ -1301,9 +1309,11 @@ void Loader::Impl::installModManuallyFromBytes(std::span<const std::uint8_t> byt
             meta.getName()
         );
         FLAlertLayer::create(
+            nullptr,
             "Mod Installed",
             installMessage.c_str(),
-            "OK"
+            "OK",
+            nullptr
         )->show();
     };
 
@@ -1323,12 +1333,14 @@ void Loader::Impl::installModManuallyFromBytes(std::span<const std::uint8_t> byt
                 std::filesystem::remove(existing->getPackagePath(), ec);
                 if (ec) {
                     FLAlertLayer::create(
+                        nullptr,
                         "Unable to Uninstall",
                         fmt::format(
                             "Unable to uninstall <cy>{}</c>: {} (Error code <cr>{}</c>)",
                             existing->getID(), ec.message(), ec.value()
                         ).c_str(),
-                        "OK"
+                        "OK",
+                        nullptr
                     )->show();
                     return;
                 }
@@ -1345,13 +1357,15 @@ void Loader::Impl::installModManuallyFromFile(std::filesystem::path const& path,
     auto res = ModMetadata::createFromGeodeFile(path);
     if (!res) {
         FLAlertLayer::create(
+            nullptr,
             "Invalid File",
             fmt::format(
                 "The path <cy>'{}'</c> is not a valid Geode mod: {}",
                 path,
                 res.unwrapErr()
             ).c_str(),
-            "OK"
+            "OK",
+            nullptr
         )->show();
         return;
     }
@@ -1360,13 +1374,15 @@ void Loader::Impl::installModManuallyFromFile(std::filesystem::path const& path,
     auto check = meta.checkTargetVersions();
     if (!check) {
         FLAlertLayer::create(
+            nullptr,
             "Invalid Mod Version",
             fmt::format(
                 "The mod <cy>{}</c> can not be installed: {}",
                 meta.getID(),
                 check.unwrapErr()
             ).c_str(),
-            "OK"
+            "OK",
+            nullptr
         )->show();
 
         return;
@@ -1388,12 +1404,14 @@ void Loader::Impl::installModManuallyFromFile(std::filesystem::path const& path,
         // This is incredibly unlikely but theoretically possible
         if (counter >= MAX_ATTEMPTS) {
             FLAlertLayer::create(
+                nullptr,
                 "Unable to Install",
                 fmt::format(
                     "Unable to install mod <co>{}</c>: Can't find a free filename!",
                     meta.getID()
                 ).c_str(),
-                "OK"
+                "OK",
+                nullptr
             )->show();
             return;
         }
@@ -1402,12 +1420,14 @@ void Loader::Impl::installModManuallyFromFile(std::filesystem::path const& path,
         std::filesystem::copy_file(path, installTo, ec);
         if (ec) {
             FLAlertLayer::create(
+                nullptr,
                 "Unable to Install",
                 fmt::format(
                     "Unable to install mod <co>{}</c>: {} (Error code <cr>{}</c>)",
                     meta.getID(), ec.message(), ec.value()
                 ).c_str(),
-                "OK"
+                "OK",
+                nullptr
             )->show();
             return;
         }
@@ -1446,12 +1466,14 @@ void Loader::Impl::installModManuallyFromFile(std::filesystem::path const& path,
                     std::filesystem::remove(path, ec);
                     if (ec) {
                         FLAlertLayer::create(
+                            nullptr,
                             "Unable to Delete",
                             fmt::format(
                                 "Unable to delete <cy>{}</c>: {} (Error code <cr>{}</c>)",
                                 path, ec.message(), ec.value()
                             ).c_str(),
-                            "OK"
+                            "OK",
+                            nullptr
                         )->show();
                     }
                     // No need to show a confirmation popup if successful since that's
@@ -1477,12 +1499,14 @@ void Loader::Impl::installModManuallyFromFile(std::filesystem::path const& path,
                 std::filesystem::remove(existing->getPackagePath(), ec);
                 if (ec) {
                     FLAlertLayer::create(
+                        nullptr,
                         "Unable to Uninstall",
                         fmt::format(
                             "Unable to uninstall <cy>{}</c>: {} (Error code <cr>{}</c>)",
                             existing->getID(), ec.message(), ec.value()
                         ).c_str(),
-                        "OK"
+                        "OK",
+                        nullptr
                     )->show();
                     return;
                 }
