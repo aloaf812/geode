@@ -17,7 +17,7 @@ $register_ids(PauseLayer) {
 	idx += 2;
 
 	auto level = GameManager::sharedState()->m_playLayer->m_level;
-	auto controller = PlatformToolbox::isControllerConnected();
+	auto controller = false;
 
 	setIDs(
 		this,

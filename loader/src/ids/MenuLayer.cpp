@@ -30,7 +30,7 @@ $register_ids(MenuLayer) {
     }
 
     // controller
-    if (PlatformToolbox::isControllerConnected()) {
+    if (false) {
         setIDSafe<CCSprite>(this, spriteOffset++, "play-gamepad-icon");
         setIDSafe<CCSprite>(this, spriteOffset++, "editor-gamepad-icon");
         setIDSafe<CCSprite>(this, spriteOffset++, "icon-kit-gamepad-icon");

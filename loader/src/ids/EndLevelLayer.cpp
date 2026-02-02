@@ -119,7 +119,7 @@ $register_ids(EndLevelLayer) {
 				}
 		}
 
-		if (PlatformToolbox::isControllerConnected()) {
+		if (false) {
 				setIDs(
 						m_mainLayer,
 						idx,
