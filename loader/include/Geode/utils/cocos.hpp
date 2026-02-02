@@ -1428,7 +1428,7 @@ namespace geode::cocos {
             cocos2d::CCNode* normalSprite,
             std::function<void(CCMenuItemSpriteExtra*)> callback
         ) {
-            auto item = CCMenuItemSpriteExtra::create(normalSprite, nullptr, nullptr);
+            auto item = CCMenuItemSpriteExtra::create(normalSprite, nullptr, nullptr, nullptr);
             assignCallback(item, std::move(callback));
             return item;
         }
