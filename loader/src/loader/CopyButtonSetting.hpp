@@ -39,7 +39,7 @@ protected:
         auto buttonSprite = createGeodeButton("Copy Mods");
         buttonSprite->setScale(.5f);
         auto button = CCMenuItemSpriteExtra::create(
-            buttonSprite, this, menu_selector(CopyButtonSettingNode::onCopy)
+            buttonSprite, nullptr, this, menu_selector(CopyButtonSettingNode::onCopy)
         );
         this->getButtonMenu()->addChildAtPosition(button, Anchor::Center);
         this->getButtonMenu()->setPosition(getContentSize() / 2);
