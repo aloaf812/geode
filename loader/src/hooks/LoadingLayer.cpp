@@ -52,10 +52,10 @@ struct CustomLoadingLayer : Modify<CustomLoadingLayer, LoadingLayer> {
     }
 
     // hook
-    bool init(bool fromReload) {
+    bool init() {
         CCFileUtils::get()->updatePaths();
 
-        if (!LoadingLayer::init(fromReload)) return false;
+        if (!LoadingLayer::init()) return false;
 
         NodeIDs::provideFor(this);
 
