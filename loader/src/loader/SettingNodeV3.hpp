@@ -95,7 +95,7 @@ protected:
         m_bigArrowLeftBtnSpr->setScale(.3f);
 
         m_bigArrowLeftBtn = CCMenuItemSpriteExtra::create(
-            m_bigArrowLeftBtnSpr, this, menu_selector(NumberSettingNodeV3::onArrow)
+            m_bigArrowLeftBtnSpr, nullptr, this, menu_selector(NumberSettingNodeV3::onArrow)
         );
         m_bigArrowLeftBtn->setUserObject(ObjWrapper<ValueType>::create(-setting->getBigArrowStepSize()));
         m_bigArrowLeftBtn->setVisible(setting->isBigArrowsEnabled());
@@ -104,7 +104,7 @@ protected:
         m_arrowLeftBtnSpr = CCSprite::createWithSpriteFrameName("GJ_arrow_01_001.png");
         m_arrowLeftBtnSpr->setScale(.5f);
         m_arrowLeftBtn = CCMenuItemSpriteExtra::create(
-            m_arrowLeftBtnSpr, this, menu_selector(NumberSettingNodeV3::onArrow)
+            m_arrowLeftBtnSpr, nullptr, this, menu_selector(NumberSettingNodeV3::onArrow)
         );
         m_arrowLeftBtn->setUserObject(ObjWrapper<ValueType>::create(-setting->getArrowStepSize()));
         m_arrowLeftBtn->setVisible(setting->isArrowsEnabled());
@@ -128,7 +128,7 @@ protected:
         m_arrowRightBtnSpr->setFlipX(true);
         m_arrowRightBtnSpr->setScale(.5f);
         m_arrowRightBtn = CCMenuItemSpriteExtra::create(
-            m_arrowRightBtnSpr, this, menu_selector(NumberSettingNodeV3::onArrow)
+            m_arrowRightBtnSpr, nullptr, this, menu_selector(NumberSettingNodeV3::onArrow)
         );
         m_arrowRightBtn->setUserObject(ObjWrapper<ValueType>::create(setting->getArrowStepSize()));
         m_arrowRightBtn->setVisible(setting->isArrowsEnabled());
@@ -148,7 +148,7 @@ protected:
         m_bigArrowRightBtnSpr->setScale(.3f);
 
         m_bigArrowRightBtn = CCMenuItemSpriteExtra::create(
-            m_bigArrowRightBtnSpr, this, menu_selector(NumberSettingNodeV3::onArrow)
+            m_bigArrowRightBtnSpr, nullptr, this, menu_selector(NumberSettingNodeV3::onArrow)
         );
         m_bigArrowRightBtn->setUserObject(ObjWrapper<ValueType>::create(setting->getBigArrowStepSize()));
         m_bigArrowRightBtn->setVisible(setting->isBigArrowsEnabled());

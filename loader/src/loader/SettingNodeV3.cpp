@@ -93,7 +93,7 @@ bool SettingNodeV3::init(std::shared_ptr<SettingV3> setting, float width) {
     auto resetSpr = CCSprite::createWithSpriteFrameName("reset-gold.png"_spr);
     resetSpr->setScale(.5f);
     m_impl->resetButton = CCMenuItemSpriteExtra::create(
-        resetSpr, this, menu_selector(SettingNodeV3::onReset)
+        resetSpr, nullptr, this, menu_selector(SettingNodeV3::onReset)
     );
     m_impl->nameMenu->addChild(m_impl->resetButton);
 
