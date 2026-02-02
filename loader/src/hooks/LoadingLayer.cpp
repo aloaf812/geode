@@ -193,10 +193,7 @@ struct CustomLoadingLayer : Modify<CustomLoadingLayer, LoadingLayer> {
     }
 
     bool skipOnRefresh() {
-        if (m_fromRefresh) {
-            this->continueLoadAssets();
-        }
-        return !m_fromRefresh;
+        return false;
     }
 
     // hook
