@@ -66,7 +66,7 @@ struct CustomMenuLayer : Modify<CustomMenuLayer, MenuLayer> {
             auto bottomMenu = static_cast<CCMenu*>(this->getChildByID("bottom-menu"));
 
             auto btn = CCMenuItemSpriteExtra::create(
-                m_fields->m_geodeButton, this,
+                m_fields->m_geodeButton, nullptr, this,
                 static_cast<SEL_MenuHandler>(geodeBtnSelector)
             );
             btn->setID("geode-button"_spr);
@@ -341,12 +341,14 @@ struct CustomMenuLayer : Modify<CustomMenuLayer, MenuLayer> {
         // user has access to moving stuff there
 
         FLAlertLayer::create(
+            nullptr,
             "Missing Textures",
             "You appear to be missing textures, and the automatic texture fixer "
             "hasn't fixed the issue.\n"
             "**<cy>Report this bug to the Geode developers</c>**. It is very likely "
             "that your game <cr>will crash</c> until the issue is resolved.",
-            "OK"
+            "OK",
+            nullptr
         )->show();
 
     #endif
