@@ -133,7 +133,8 @@ void ModProblemItem::onInfo(CCObject*) {
 
     if (m_problem.message.length() > 400) {
         // show message in a scrolling layer if it's too long
-        FLAlertLayer::create(nullptr, "Error Details", m_problem.message.c_str(), "OK", nullptr, 400.0f, true, 280.0f)->show();
+        //FLAlertLayer::create(nullptr, "Error Details", m_problem.message.c_str(), "OK", nullptr, 400.0f, true, 280.0f)->show();
+        //CCLOG("problem, %s", m_problem.message.c_str());
     } else {
         FLAlertLayer::create("Error Details", m_problem.message.c_str(), "OK")->show();
     }
