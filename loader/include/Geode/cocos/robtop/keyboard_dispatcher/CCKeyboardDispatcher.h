@@ -23,7 +23,7 @@ public:
 
 	enumKeyCodes convertKeyCode(enumKeyCodes key);
 
-	bool dispatchKeyboardMSG(enumKeyCodes key, bool isKeyDown);
+	bool dispatchKeyboardMSG(int key, bool isKeyDown);
 
 	void updateModifierKeys(bool shft, bool ctrl, bool alt, bool cmd);
 

@@ -122,7 +122,7 @@ void TextInput::setLabel(std::string const& label) {
             m_label = CCLabelBMFont::create(label.c_str(), "goldFont.fnt");
             this->addChildAtPosition(m_label, Anchor::TopLeft, ccp(3, 2), ccp(0, 0));
         }
-        m_label->limitLabelWidth(m_bgSprite->getScaledContentWidth() - 6, .4f, .1f);
+        //m_label->limitLabelWidth(m_bgSprite->getScaledContentWidth() - 6, .4f, .1f);
     }
     else {
         if (m_label) {

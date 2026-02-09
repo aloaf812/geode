@@ -345,7 +345,7 @@ public:
     virtual gd::string getWritablePath() { return ""; }
 
     // @note RobTop Addition
-    virtual gd::string getWritablePath2();
+    //virtual gd::string getWritablePath2();
 
     /**
      *  Checks whether a file exists.

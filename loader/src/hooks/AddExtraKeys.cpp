@@ -33,7 +33,7 @@ class $modify(GeodeCCEGLView, CCEGLView) {
         if (numpad) {
             keyCode = this->numpadToKeyCode(key);
         }
-        CCKeyboardDispatcher::get()->dispatchKeyboardMSG(keyCode, down);
+        CCKeyboardDispatcher::get()->dispatchKeyboardMSG(key, down);
     }
 
     void onGLFWMouseCallBack(GLFWwindow* window, int button, int action, int mods) {
@@ -43,28 +43,16 @@ class $modify(GeodeCCEGLView, CCEGLView) {
         bool down = action == 1;
         // mouse buttons never repeat
         bool repeat = false;
-        enumKeyCodes keyCode = this->mouseButtonToKeyCode(button);
-        CCKeyboardDispatcher::get()->dispatchKeyboardMSG(keyCode, down);
+        int keyCode = this->mouseButtonToKeyCode(button);
+        CCKeyboardDispatcher::get()->dispatchKeyboardMSG(button, down);
     }
 
     bool isExtraMouseButton(int code) {
         return code > GLFW_MOUSE_BUTTON_3;
     }
 
-    enumKeyCodes mouseButtonToKeyCode(int button) {
-        switch (button) {
-            case GLFW_MOUSE_BUTTON_4:
-                return enumKeyCodes::MOUSE_4;
-            case GLFW_MOUSE_BUTTON_5:
-                return enumKeyCodes::MOUSE_5;
-            case GLFW_MOUSE_BUTTON_6:
-                return enumKeyCodes::MOUSE_6;
-            case GLFW_MOUSE_BUTTON_7:
-                return enumKeyCodes::MOUSE_7;
-            case GLFW_MOUSE_BUTTON_8:
-                return enumKeyCodes::MOUSE_8;
-            default:
-                return enumKeyCodes::KEY_Unknown;
+    int mouseButtonToKeyCode(int button) {
+        return button;
         }
     }
 

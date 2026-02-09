@@ -298,15 +298,15 @@ bool ColorPickPopup::setup(ccColor4B const& color, bool isRGBA) {
         opacityText->setID("opacity-text");
         sliderColumn->addChild(opacityText);
 
-        m_impl->m_opacitySlider =
+        /*m_impl->m_opacitySlider =
             Slider::create(this, menu_selector(ColorPickPopup::onOpacitySlider), .75f);
         m_impl->m_opacitySlider->setValue(color.a / 255.f);
-        m_impl->m_opacitySlider->setID("opacity-slider");
+        m_impl->m_opacitySlider->setID("opacity-slider");*/
 
         auto sliderWrapper = CCNode::create();
-        sliderWrapper->setContentSize(ccp(m_impl->m_opacitySlider->m_width, m_impl->m_opacitySlider->m_height) * .75f);
+        //sliderWrapper->setContentSize(ccp(m_impl->m_opacitySlider->m_width, m_impl->m_opacitySlider->m_height) * .75f);
         sliderWrapper->setID("slider-wrapper");
-        sliderWrapper->addChildAtPosition(m_impl->m_opacitySlider, Anchor::Center, ccp(0, 0));
+        //sliderWrapper->addChildAtPosition(m_impl->m_opacitySlider, Anchor::Center, ccp(0, 0));
         sliderColumn->addChild(sliderWrapper);
 
         m_impl->m_opacityInput = TextInput::create(60.f, "Opacity");
@@ -347,9 +347,9 @@ void ColorPickPopup::updateState(CCNode* except) {
     if (m_impl->m_opacityInput) {
         IF_NOT_EXCEPT(m_impl->m_opacityInput, numToString(m_impl->m_color.a / 255.f, 2));
     }
-    if (m_impl->m_opacitySlider) {
+    /*if (m_impl->m_opacitySlider) {
         m_impl->m_opacitySlider->setValue(m_impl->m_color.a / 255.f);
-    }
+    }*/
     if (m_impl->m_picker != except) {
         m_impl->m_picker->setDelegate(nullptr);
         m_impl->m_picker->setColorValue(to3B(m_impl->m_color));

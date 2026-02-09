@@ -489,7 +489,7 @@ void FileSettingNodeV3::updateState(CCNode* invoker) {
         m_nameLabel->setColor(ccWHITE);
         m_nameLabel->setOpacity(255);
     }
-    m_nameLabel->limitLabelWidth(75, .35f, .1f);
+    //m_nameLabel->limitLabelWidth(75, .35f, .1f);
 
     auto enable = this->getSetting()->shouldEnable();
     m_selectBtnSpr->setOpacity(enable ? 255 : 155);
@@ -654,7 +654,7 @@ bool UnresolvedCustomSettingNodeV3::init(std::string_view key, Mod* mod, float w
         "bigFont.fnt"
     );
     label->setColor(mod && mod->isEnabled() ? "mod-list-errors-found-2"_cc3b : "mod-list-gray"_cc3b);
-    label->limitLabelWidth(width - m_obContentSize.height, .3f, .1f);
+    //label->limitLabelWidth(width - m_obContentSize.height, .3f, .1f);
     this->addChildAtPosition(label, Anchor::Left, ccp(m_obContentSize.height / 2, 0), ccp(0, .5f));
 
     return true;

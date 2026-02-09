@@ -395,7 +395,7 @@ public:
     // @note RobTop Addition
     void updateContentScale(TextureQuality);
     // @note RobTop Addition
-    void updateScreenScale(CCSize);
+    void updateScreenScale(CCSize, CCSize);
 
 /*
     // @note RobTop Addition

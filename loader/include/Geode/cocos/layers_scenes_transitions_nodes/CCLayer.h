@@ -184,7 +184,7 @@ public:
     virtual void keyMenuClicked(void);
 
     // @note RobTop Addition
-    virtual void keyDown(enumKeyCodes);
+    //virtual void keyDown(enumKeyCodes);
 
     inline CCTouchScriptHandlerEntry* getScriptTouchHandlerEntry() { return m_pScriptTouchHandlerEntry; };
     inline CCScriptHandlerEntry* getScriptKeypadHandlerEntry() { return m_pScriptKeypadHandlerEntry; };

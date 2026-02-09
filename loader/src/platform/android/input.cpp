@@ -137,7 +137,7 @@ Java_com_geode_launcher_utils_GeodeUtils_nativeKeyDown(
 
         keyboard_dispatcher->updateModifierKeys(isShiftPressed, isCtrlPressed, isAltPressed, false);
 
-        keyboard_dispatcher->dispatchKeyboardMSG(translated_code, true);
+        keyboard_dispatcher->dispatchKeyboardMSG(keycode, true);
     } else {
         auto keypad_dispatcher = cocos2d::CCDirector::sharedDirector()->getKeypadDispatcher();
         if (keycode == AKEYCODE_BACK) {
@@ -167,7 +167,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_geode_launcher_utils_GeodeUtils_nativ
             false
         );
 
-        keyboard_dispatcher->dispatchKeyboardMSG(translated_code, false);
+        keyboard_dispatcher->dispatchKeyboardMSG(keycode, false);
     }
 }
 
@@ -188,7 +188,7 @@ extern "C" JNIEXPORT void JNICALL Java_com_geode_launcher_utils_GeodeUtils_resiz
     auto fHeight = static_cast<float>(height);
 
     cocos2d::CCEGLView::sharedOpenGLView()->setFrameSize(fWidth, fHeight);
-    cocos2d::CCDirector::sharedDirector()->updateScreenScale({fWidth, fHeight});
+    cocos2d::CCDirector::sharedDirector()->updateScreenScale({fWidth, fHeight}, {0.0f, 0.0f});
     cocos2d::CCDirector::sharedDirector()->setViewport();
     cocos2d::CCDirector::sharedDirector()->setProjection(cocos2d::kCCDirectorProjection2D);
 }

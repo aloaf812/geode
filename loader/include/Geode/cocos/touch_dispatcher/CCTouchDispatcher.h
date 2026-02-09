@@ -203,9 +203,9 @@ public:
     CCTouchHandler* findHandler(CCTouchDelegate *pDelegate);
 
     // @note RobTop Addition
-    void incrementForcePrio();
+    //void incrementForcePrio();
     // @note RobTop Addition
-    void decrementForcePrio();
+    //void decrementForcePrio();
 protected:
     void forceRemoveDelegate(CCTouchDelegate *pDelegate);
     void forceAddHandler(CCTouchHandler *pHandler, CCArray* pArray);

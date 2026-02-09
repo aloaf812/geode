@@ -25,7 +25,7 @@ bool MDPopup::setup(
     m_mainLayer->addChildAtPosition(content, Anchor::Center, ccp(0, 0));
 
     this->setTitle(title.c_str(), "goldFont.fnt", .9f, 28.f);
-    m_title->limitLabelWidth(contentSize.width - 4.f, .9f, .1f);
+    //m_title->limitLabelWidth(contentSize.width - 4.f, .9f, .1f);
 
     auto btnSpr = ButtonSprite::create(btn1Text);
 

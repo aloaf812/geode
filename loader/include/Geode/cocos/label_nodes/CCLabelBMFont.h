@@ -272,7 +272,7 @@ public:
     // @note RobTop Addition
     static CCLabelBMFont* createBatched(const char* str, const char* fntFile, CCArray*, int);
     // @note RobTop Addition
-    void limitLabelWidth(float width, float defaultScale, float minScale);
+   // void limitLabelWidth(float width, float defaultScale, float minScale);
 
 /*
 	// @note RobTop Addition

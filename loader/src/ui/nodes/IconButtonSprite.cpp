@@ -40,7 +40,7 @@ void IconButtonSprite::updateLayout() {
 
     auto size = CCSize { 20.f, 20.f };
     if (hasText) {
-        m_label->limitLabelWidth(100.f, .6f, .1f);
+        //m_label->limitLabelWidth(100.f, .6f, .1f);
         size.width += m_label->getScaledContentSize().width;
         if (m_icon) {
             size.width += PAD;

@@ -67,7 +67,7 @@ namespace geode {
                 m_prevBtn->setEnabled(false);
                 m_nextBtn->setEnabled(false);
             }
-            m_label->limitLabelWidth(m_obContentSize.width - 40.f, .6f, .1f);
+            //m_label->limitLabelWidth(m_obContentSize.width - 40.f, .6f, .1f);
         }
 
         void onPrev(CCObject* sender) {

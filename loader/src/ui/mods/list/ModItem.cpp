@@ -299,7 +299,7 @@ bool ModItem::init(ModSource&& source) {
             auto downloads = CCLabelBMFont::create(numToAbbreviatedString(metadata.downloadCount).c_str(), "bigFont.fnt");
             downloads->setID("downloads-label");
             downloads->setColor("mod-list-version-label"_cc3b);
-            downloads->limitLabelWidth(125, 1.f, .1f);
+            //downloads->limitLabelWidth(125, 1.f, .1f);
             m_downloadCountContainer->addChildAtPosition(downloads, Anchor::Right, ccp(-0, 0), ccp(1, .5f));
 
             auto downloadsIcon = CCSprite::createWithSpriteFrameName("GJ_downloadsIcon_001.png");

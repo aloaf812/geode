@@ -81,7 +81,7 @@ public:
     CCScene(const CCScene&);
     CCScene& operator=(const CCScene&);
 
-    int getHighestChildZ(void);
+    //int getHighestChildZ(void);
 
     CCSceneDelegate* m_pDelegate;
 };

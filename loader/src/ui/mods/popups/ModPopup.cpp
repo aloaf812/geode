@@ -159,14 +159,14 @@ bool ModPopup::setup(ModSource&& src) {
     auto devAndTitlePos = m_titleContainer->getContentHeight() + 5;
 
     auto title = CCLabelBMFont::create(m_source.getMetadata().getName().c_str(), "bigFont.fnt");
-    title->limitLabelWidth(m_titleContainer->getContentWidth() - devAndTitlePos, .45f, .1f);
+    //title->limitLabelWidth(m_titleContainer->getContentWidth() - devAndTitlePos, .45f, .1f);
     title->setAnchorPoint({ .0f, .5f });
     title->setID("mod-name-label");
     m_titleContainer->addChildAtPosition(title, Anchor::TopLeft, ccp(devAndTitlePos, -m_titleContainer->getContentHeight() * .25f));
 
     auto by = "By " + m_source.formatDevelopers();
     auto dev = CCLabelBMFont::create(by.c_str(), "goldFont.fnt");
-    dev->limitLabelWidth(m_titleContainer->getContentWidth() - devAndTitlePos, .35f, .05f);
+    //dev->limitLabelWidth(m_titleContainer->getContentWidth() - devAndTitlePos, .35f, .05f);
     dev->setAnchorPoint({ .0f, .5f });
     dev->setID("mod-developer-label");
     m_titleContainer->addChildAtPosition(dev, Anchor::BottomLeft, ccp(devAndTitlePos, m_titleContainer->getContentHeight() * .25f));
@@ -218,7 +218,7 @@ bool ModPopup::setup(ModSource&& src) {
 
     auto idStr = "(ID: " + m_source.getMetadata().getID() + ")";
     auto idLabel = CCLabelBMFont::create(idStr.c_str(), "bigFont.fnt");
-    idLabel->limitLabelWidth(leftColumn->getContentWidth(), .25f, .05f);
+    //idLabel->limitLabelWidth(leftColumn->getContentWidth(), .25f, .05f);
     idLabel->setColor({ 150, 150, 150 });
     idLabel->setOpacity(140);
     idLabel->setID("mod-id-label");
@@ -303,7 +303,7 @@ bool ModPopup::setup(ModSource&& src) {
     // Tags
 
     auto tagsTitle = CCLabelBMFont::create("Tags", "bigFont.fnt");
-    tagsTitle->limitLabelWidth(leftColumn->getContentWidth(), .25f, .05f);
+    //tagsTitle->limitLabelWidth(leftColumn->getContentWidth(), .25f, .05f);
     tagsTitle->setOpacity(195);
     leftColumn->addChild(tagsTitle);
 
