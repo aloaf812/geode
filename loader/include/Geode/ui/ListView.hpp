@@ -2,10 +2,10 @@
 
 #include <Geode/binding/CustomListView.hpp>
 #include <Geode/binding/CCIndexPath.hpp>
-#include <Geode/binding/CCTableViewCell.hpp>
+#include <Geode/binding/TableViewCell.hpp>
 
 namespace geode {
-    class GEODE_DLL GenericListCell : public CCTableViewCell {
+    class GEODE_DLL GenericListCell : public TableViewCell {
     protected:
         cocos2d::ccColor3B m_primaryColor;
         cocos2d::ccColor3B m_secondaryColor;
@@ -38,8 +38,8 @@ namespace geode {
         cocos2d::ccColor4B m_cellBorderColor;
 
         void setupList() override;
-        CCTableViewCell* getListCell(char const* key) override;
-        void loadCell(CCTableViewCell* cell, int index) override;
+        TableViewCell* getListCell(char const* key) override;
+        void loadCell(TableViewCell* cell, int index) override;
         void updateAllCells();
 
     public:

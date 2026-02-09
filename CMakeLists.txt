@@ -205,8 +205,8 @@ include(cmake/GeodeFile.cmake)
 # end GEODE_GD_VERSION
 
 if (NOT DEFINED GEODE_GD_VERSION)
-	set(GEODE_GD_VERSION 1.710)
-	set(GEODE_COMP_GD_VERSION 17100)
+	set(GEODE_GD_VERSION 1.811)
+	set(GEODE_COMP_GD_VERSION 18110)
 endif()
 
 target_compile_definitions(
@@ -317,6 +317,7 @@ target_include_directories(GeodeBindings PUBLIC
 	${GEODE_LOADER_PATH}/include
 	${GEODE_LOADER_PATH}/include/Geode/cocos/include
 	${GEODE_LOADER_PATH}/include/Geode/cocos/extensions
+	# ${GEODE_LOADER_PATH}/include/Geode/fmod
 )
 target_link_directories(GeodeBindings PUBLIC ${GEODE_LOADER_PATH}/include/link)
 target_compile_definitions(GeodeBindings PUBLIC GEODE_USE_NEW_DESTRUCTOR_LOCK=1)

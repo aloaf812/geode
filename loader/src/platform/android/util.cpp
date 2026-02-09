@@ -385,10 +385,11 @@ void geode::utils::game::exit(bool save) {
     }
     // AppDelegate::get()->showLoadingCircle(false, true);
 
-    CCDirector::get()->getActionManager()->addAction(CCSequence::createWithTwoActions(
+    /*CCDirector::get()->getActionManager()->addAction(CCSequence::createWithTwoActions(
         CCDelayTime::create(0.5f),
+        // it's literally impossible
         CCCallFunc::create(nullptr, callfunc_selector(MenuLayer::endGame))
-    ), CCDirector::get()->getRunningScene(), false);
+    ), CCDirector::get()->getRunningScene(), false);*/
 }
 
 void geode::utils::game::exit() {

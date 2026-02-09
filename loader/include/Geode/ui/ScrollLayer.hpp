@@ -6,7 +6,7 @@
 namespace geode {
     /**
      * CCContentLayer expects all of its children
-     * to be CCTableViewCells, which is not ideal for
+     * to be TableViewCells, which is not ideal for
      * a generic content layer
      */
     class GEODE_DLL GenericContentLayer : public CCContentLayer {

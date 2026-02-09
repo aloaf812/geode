@@ -6,8 +6,8 @@
 
 using namespace geode::prelude;
 
-GenericListCell::GenericListCell(char const* name, CCSize size) :
-    TableViewCell(name, size.width, size.height),
+/*GenericListCell::GenericListCell(char const* name, CCSize size) :
+    CCTableViewCell(name, size.width, size.height),
     m_primaryColor(ccc3(0xa1, 0x58, 0x2c)),
     m_secondaryColor(ccc3(0xc2, 0x72, 0x3e)),
     m_opacity(0xff),
@@ -66,11 +66,11 @@ void ListView::setupList() {
     }
 }
 
-TableViewCell* ListView::getListCell(char const* key) {
+CCTableViewCell* ListView::getListCell(char const* key) {
     return GenericListCell::create(key, { m_width, m_itemSeparation });
 }
 
-void ListView::loadCell(TableViewCell* cell, int index) {
+void ListView::loadCell(CCTableViewCell* cell, int index) {
     auto node = typeinfo_cast<CCNode*>(m_entries->objectAtIndex(index));
     if (node) {
         auto lcell = static_cast<GenericListCell*>(cell);
@@ -131,4 +131,4 @@ void ListView::updateAllCells() {
             cell->updateBGColor(i);
         }
     }
-}
+}*/
